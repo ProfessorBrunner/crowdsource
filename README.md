@@ -1,6 +1,6 @@
 # Crowdsource Web Application for arbitrary projects
 
 ## Authors
-Sanchit Aggarwal
-Xianmin Liu
+Sanchit Aggarwal  
+Xianmin Liu  
 Rober J. Brunner
