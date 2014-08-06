@@ -1,4 +1,4 @@
-# Crowdsource Web Application for the Dark Energy Survey
+# Crowdsource Web Application for arbitrary projects
 
 ## Authors
 Sanchit Aggarwal
