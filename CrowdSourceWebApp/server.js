@@ -27,4 +27,4 @@ app.listen(config.port);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('MEAN.JS application started on port ' + config.port);
+console.log('LCDM CrowdSource Web application started on port ' + config.port);
