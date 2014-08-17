@@ -7,8 +7,9 @@ This project is completed as a part of Google Summer of Code 2014. The goal of t
 The main aim for the project was to enable more general crowdsourcing experiments where there is a Interactive GUI for both data presentation and classification gathering. 
 As a result, in this project, we developed an entirely new user interface to enable a human user to easily view, identify, and tag features within an experiment setup through this platform. 
 
-The Admin can be able to setup any croudsource experiment based on images, videos etc.
-In Addition, user will be able to select pre-assigned labels, as well as enter free-form text to describe unusual or interesting classes in the corresponding experiment.
+## Main Attractions
+1. The Admin can be able to setup any croudsource experiment based on images, videos etc.
+2. In Addition, user will be able to select pre-assigned labels, as well as enter free-form text to describe unusual or interesting classes in the corresponding experiment.
 
 
 ## Technologies Used
@@ -18,42 +19,27 @@ In Addition, user will be able to select pre-assigned labels, as well as enter f
 3. [Express](http://expressjs.com/), and 
 4. [AngularJS](http://angularjs.org/).
 
-We have used the MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid starting point for developing the platform.
+We have used the MEAN.JS, a full-stack JavaScript open-source solution, as a starting point for developing the platform.
 
 
 ## Prerequisites to Setup the platform
 1. Install Node.js - [Download & Install Node.js](http://www.nodejs.org/download/) and the npm package manager.
-2. Install MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads). It should run on the default port 27017.
-3. Install Bower - [Bower Package Manager](http://bower.io/) to manage front-end packages. Install it globally.
-
-```
-$ npm install -g bower
-```
-
+2. Install MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads). Note: It should run on the default port 27017.
+3. Install Bower - [Bower Package Manager](http://bower.io/) to manage front-end packages. Note: Install it globally.
 4. Install Grunt - [Grunt Task Runner](http://gruntjs.com/) to automate development process.
 
 ```
+$ npm install -g bower
 $ sudo npm install -g grunt-cli
 ```
 
-
-To install Node.js dependencies you're going to use npm again, in the application folder run this in the command-line:
-
-```
-$ npm install
-```
-
-This command does a few things:
-* First it will install the dependencies needed for the application to run.
-* If you're running in a development environment, it will then also install development dependencies needed for testing and running your application.
-* Finally, when the install process is over, npm will initiate a bower installcommand to install all the front-end modules needed for the application
-
 ## Running the Web Application
-After installing all the prerequisites Go to root folder of the source tree and run
-1. `grunt test` to run the test suite.
-2. `grunt server` to run the webapp.
- 
-The application will run on the 3000 port in the browser. Go to [http://localhost:3000](http://localhost:3000)
+1. After installing all the prerequisites Go to root folder of the source tree and run
+	- `npm install` to install Node.js dependencies.
+	- `grunt test` to run the test suite.
+	- grunt` to run the webapp.
+2. The application will run on the 3000 port in the browser. 
+	- Go to [http://localhost:3000](http://localhost:3000)
 
 ## License
 (The MIT License)
