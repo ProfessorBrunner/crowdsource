@@ -1,3 +1,5 @@
+# Crowdsource Web Application for arbitrary projects
+
 [![LCDM Logo](http://lcdm.astro.illinois.edu/theme/images/LCDM-logo.png)](http://lcdm.astro.illinois.edu/xprojects/cswebapp.html)
 
 The Laboratory for Cosmological Data Mining was founded in 2002 at the University of Illinois by Professor Robert J. Brunner to develop and apply computational technologies to extract cosmological information from the large astrophysical data sets being generated within our community. LCDM has been one of the top twenty users, worldwide of the production supercomputing resources at NCSA.
@@ -7,10 +9,14 @@ This project is completed as a part of Google Summer of Code 2014. The goal of t
 The main aim for the project was to enable more general crowdsourcing experiments where there is a Interactive GUI for both data presentation and classification gathering. 
 As a result, in this project, we developed an entirely new user interface to enable a human user to easily view, identify, and tag features within an experiment setup through this platform. 
 
+## Authors
+Sanchit Aggarwal  
+Xianmin Liu  
+Rober J. Brunner
+
 ## Main Attractions
 1. The Admin can be able to setup any croudsource experiment based on images, videos etc.
 2. In Addition, user will be able to select pre-assigned labels, as well as enter free-form text to describe unusual or interesting classes in the corresponding experiment.
-
 
 ## Technologies Used
 
@@ -19,7 +25,7 @@ As a result, in this project, we developed an entirely new user interface to ena
 3. [Express](http://expressjs.com/), and 
 4. [AngularJS](http://angularjs.org/).
 
-We have used the MEAN.JS, a full-stack JavaScript open-source solution, as a starting point for developing the platform.
+We have used the mean.js, a full-stack JavaScript open-source solution, as a starting point for developing the platform.
 
 
 ## Prerequisites to Setup the platform
@@ -37,7 +43,7 @@ $ sudo npm install -g grunt-cli
 1. After installing all the prerequisites Go to root folder of the source tree and run
 	- `npm install` to install Node.js dependencies.
 	- `grunt test` to run the test suite.
-	- grunt` to run the webapp.
+	- `grunt` to run the webapp.
 2. The application will run on the 3000 port in the browser. 
 	- Go to [http://localhost:3000](http://localhost:3000)
 
