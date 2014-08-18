@@ -34,6 +34,12 @@ var ExperimentSchema = new Schema({
 	// 	data: Buffer, 
 	// 	contentType: String
 	// },
+	image: {
+		type: String, 
+		default: '',
+		required: 'Please fill Experiment Image Location',
+		trim: true
+	},
 	problems: [{
 		category: { type: String, trim: true, validate: [validateProperty, 'Please fill problem category'] },
 		labels: []

@@ -9,7 +9,8 @@
                     <div class="caption">
                         <h3 data-ng-bind="experiment.name"></h3>
                     </div>
-                    <img src="modules/experiments/img/download.svg" alt="...">
+                    <!-- <img src="modules/experiments/img/download.svg" alt="..."> -->
+                    <img ng-src="modules/experiments/img//{{experiment.image}}" ng-alt="experiment.type">
                     <p data-ng-bind="experiment.description"></p>
                     <div class="pull-right" data-ng-show="authentication.user._id == experiment.user._id">
                         <a class="btn btn-primary" href="/#!/experiments/{{experiment._id}}/edit">
