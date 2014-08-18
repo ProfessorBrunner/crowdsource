@@ -13,7 +13,9 @@
 				    	<accordion-group heading="{{problem.category}}" ng-repeat="problem in experiment.problems">
 				      		<div class="panel-body">
 				     			<ul class="list-group">
-							  		<li class="list-group-item" data-ng-repeat="label in problem.labels">{{label}}</li>
+							  		<li class="list-group-item" ng-repeat="label in problem.labels" lblDraggable>
+							  			{{label}}
+							  		</li>
 								</ul>
 					      	</div>
 					    </accordion-group>
@@ -24,12 +26,9 @@
       		<div class="animate-switch-container" ng-switch on="experiment.type">
 		     	<div class="animate-switch" ng-switch-when="Audio">
 		     		<audio controls width="800" height="400" >
-					  <source src="horse.ogg" type="audio/ogg">
-					  <source src="horse.mp3" type="audio/mpeg">
-					Your browser does not support the audio element.
 					</audio>
 		     	</div>
-		     	
+
 		      	<div class="animate-switch" ng-switch-when="Video">
 					<iframe type="text/html" 
 					    width="800" 
@@ -39,7 +38,7 @@
 					</iframe>
 		      	</div>
 		      	<div class="animate-switch" ng-switch-default>
-		      		<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
+		      		<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000; "></canvas>
 				</div>
 		  	</div>
 		  	<div class="row">
