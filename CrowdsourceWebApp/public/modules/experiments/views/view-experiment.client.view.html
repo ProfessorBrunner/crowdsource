@@ -2,20 +2,34 @@
 	<div class="page-header">
 		<h1 data-ng-bind="experiment.name"></h1>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == experiment.user._id">
-		<a class="btn btn-primary" href="/#!/experiments/{{experiment._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="experiment.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="experiment.user.displayName"></span>
-		</em>
-	</small>
+	<!-- The Content -->
+  	<div class="container" style="padding-top: 60px;">
+    	<div class="row">
+	      	<div class="col-md-3">
+	        	<div class="well sidebar-nav">
+	        		<div class="panel-group" id="accordion">
+		  				<div class="panel panel-default" data-ng-repeat="problem in experiment.problems">
+		    				<div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" data-parent="#accordion" ng-href="#{{problem.category}}">
+						          {{problem.category}}
+						        </a>
+						      </h4>
+		    				</div>
+						    <div id="{{problem.category}}" class="panel-collapse collapse in">
+						      <div class="panel-body">
+						     	<ul class="list-group">
+								  <li class="list-group-item" data-ng-repeat="label in problem.labels">{{label}}</li>
+								</ul>
+						      </div>
+						    </div>
+					  	</div>
+					</div>
+	        	</div>
+	      </div>
+	      <div class="col-md-9">
+	        <!-- Canvas -->
+	        <div class="row" ui-view="canvas"></div>
+	      </div>
+	    </div>
 </section>

@@ -2,18 +2,34 @@
     <div class="page-header">
         <h1>Experiments Gallery</h1>
     </div>
-    <div class="list-group">
-        <a data-ng-repeat="experiment in experiments" data-ng-href="#!/experiments/{{experiment._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="experiment.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="experiment.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="experiment.name"></h4>
-        </a>
+    <div class="row">
+        <div class="col-sm-6 col-md-4" data-ng-repeat="experiment in experiments">
+            <a data-ng-href="#!/experiments/{{experiment._id}}">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 data-ng-bind="experiment.name"></h3>
+                    </div>
+                    <img src="modules/experiments/img/download.svg" alt="...">
+                    <p data-ng-bind="experiment.description"></p>
+                    <div class="pull-right" data-ng-show="authentication.user._id == experiment.user._id">
+                        <a class="btn btn-primary" href="/#!/experiments/{{experiment._id}}/edit">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a class="btn btn-primary" data-ng-click="remove(experiment);">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </div>
+                    <small class="list-group-item-text">
+                        Created on <span data-ng-bind="experiment.created | date:'medium'"></span><br>
+                        Created by <span data-ng-bind="experiment.user.displayName"></span>
+                    </small>
+                </div>
+            </a>
+        </div>
+    </div>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!experiments.$resolved || experiments.length">
-    	No Experiments yet, why don't you <a href="/#!/experiments/create">create one</a>?
+        No Crowdsourcing Experiments yet, why don't you <a href="/#!/experiments/create">setup one</a>?
     </div>
 </section>
+
