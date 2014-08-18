@@ -15,7 +15,7 @@ Xianmin Liu
 Rober J. Brunner
 
 ## Main Attractions
-1. The Admin can be able to setup any croudsource experiment based on images, videos etc.
+1. The Admin can be able to setup any crowdsource experiment based on images, videos etc.
 2. In Addition, user will be able to select pre-assigned labels, as well as enter free-form text to describe unusual or interesting classes in the corresponding experiment.
 
 ## Technologies Used
