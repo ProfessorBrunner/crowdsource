@@ -17,7 +17,8 @@ angular.module('experiments').controller('ExperimentsController', ['$scope', '$s
 				description: this.description,
 				problems: this.problems,
 				type: this.type,
-				dataset: this.dataset
+				dataset: this.dataset,
+				image: this.image
 			});
 
 			// Redirect after save
