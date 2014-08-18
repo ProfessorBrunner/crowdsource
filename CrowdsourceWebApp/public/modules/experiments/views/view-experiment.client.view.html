@@ -22,8 +22,22 @@
       		</div>
 	    <div class="col-sm-9">
       		<div class="animate-switch-container" ng-switch on="experiment.type">
-		     	<div class="animate-switch" ng-switch-when="Audio">Add Audio Plugin Here</div>
-		      	<div class="animate-switch" ng-switch-when="Video">Add Video Plugin Here</div>
+		     	<div class="animate-switch" ng-switch-when="Audio">
+		     		<audio controls width="800" height="400" >
+					  <source src="horse.ogg" type="audio/ogg">
+					  <source src="horse.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+					</audio>
+		     	</div>
+		     	
+		      	<div class="animate-switch" ng-switch-when="Video">
+					<iframe type="text/html" 
+					    width="800" 
+					    height="400" 
+					    src="http://www.youtube.com/embed/i9MHigUZKEM"
+					    frameborder="0">
+					</iframe>
+		      	</div>
 		      	<div class="animate-switch" ng-switch-default>
 		      		<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
 				</div>
