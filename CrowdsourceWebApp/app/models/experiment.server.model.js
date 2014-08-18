@@ -6,6 +6,14 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
+
+/**
+ * A Validation function for local strategy password
+ */
+var validateProperty = function(property) {
+	return (property.length);
+};
+
 /**
  * Experiment Schema
  */
@@ -22,18 +30,18 @@ var ExperimentSchema = new Schema({
 		required: 'Please fill Experiment Description',
 		trim: true
 	},
-	image: {
-		data: Buffer, 
-		contentType: String
-	},
+	// image: {
+	// 	data: Buffer, 
+	// 	contentType: String
+	// },
 	problems: [{
-		category: { type: String, trim: true },
+		category: { type: String, trim: true, validate: [validateProperty, 'Please fill problem category'] },
 		labels: []
 	}],
 	type: {
 		type: String,
 		enum: ['Audio','Image','Video'],
-		default: 'Image',
+		default: '',
 		required: 'Please fill Experiment Type',
 		trim: true
 	},

@@ -4,12 +4,20 @@
 angular.module('experiments').controller('ExperimentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Experiments',
 	function($scope, $stateParams, $location, Authentication, Experiments ) {
 		$scope.authentication = Authentication;
-
+		$scope.experimentType=['Audio','Image','Video'];
+		$scope.problems = [{
+			'category': '',
+			'labels': []
+		}];
 		// Create new Experiment
 		$scope.create = function() {
 			// Create new Experiment object
 			var experiment = new Experiments ({
-				name: this.name
+				name: this.name,
+				description: this.description,
+				problems: this.problems,
+				type: this.type,
+				dataset: this.dataset
 			});
 
 			// Redirect after save
@@ -18,6 +26,10 @@ angular.module('experiments').controller('ExperimentsController', ['$scope', '$s
 
 				// Clear form fields
 				$scope.name = '';
+				$scope.description = '';
+				$scope.problems = [];
+				$scope.type = '';
+				$scope.dataset = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
