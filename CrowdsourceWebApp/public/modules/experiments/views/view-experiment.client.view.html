@@ -7,29 +7,21 @@
     	<div class="row">
 	      	<div class="col-md-3">
 	        	<div class="well sidebar-nav">
-	        		<div class="panel-group" id="accordion">
-		  				<div class="panel panel-default" data-ng-repeat="problem in experiment.problems">
-		    				<div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a data-toggle="collapse" data-parent="#accordion" ng-href="#{{problem.category}}">
-						          {{problem.category}}
-						        </a>
-						      </h4>
-		    				</div>
-						    <div id="{{problem.category}}" class="panel-collapse collapse in">
-						      <div class="panel-body">
-						     	<ul class="list-group">
-								  <li class="list-group-item" data-ng-repeat="label in problem.labels">{{label}}</li>
+				 	<accordion close-others="true">
+				    	<accordion-group heading="{{problem.category}}" ng-repeat="problem in experiment.problems">
+				      		<div class="panel-body">
+				     			<ul class="list-group">
+							  		<li class="list-group-item" data-ng-repeat="label in problem.labels">{{label}}</li>
 								</ul>
-						      </div>
-						    </div>
-					  	</div>
-					</div>
-	        	</div>
-	      </div>
+					      	</div>
+					    </accordion-group>
+				  	</accordion>
+	      		</div>
+      		</div>
 	      <div class="col-md-9">
 	        <!-- Canvas -->
 	        <div class="row" ui-view="canvas"></div>
 	      </div>
 	    </div>
+	</div>
 </section>
