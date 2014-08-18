@@ -1,12 +1,14 @@
 <section data-ng-controller="ExperimentsController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="experiment.name"></h1>
+		<h5 data-ng-bind="experiment.description"></h5>
 	</div>
 	<!-- The Content -->
-  	<div class="container" style="padding-top: 60px;">
+  	<div class="container" style="padding-top: 10px;">
     	<div class="row">
-	      	<div class="col-md-3">
+	      	<div class="col-sm-3">
 	        	<div class="well sidebar-nav">
+	        		<h3>Problems Labels</h3>
 				 	<accordion close-others="true">
 				    	<accordion-group heading="{{problem.category}}" ng-repeat="problem in experiment.problems">
 				      		<div class="panel-body">
@@ -18,10 +20,21 @@
 				  	</accordion>
 	      		</div>
       		</div>
-	      <div class="col-md-9">
-	        <!-- Canvas -->
-	        <div class="row" ui-view="canvas"></div>
-	      </div>
-	    </div>
+	    <div class="col-sm-9">
+      		<div class="animate-switch-container" ng-switch on="experiment.type">
+		     	<div class="animate-switch" ng-switch-when="Audio">Add Audio Plugin Here</div>
+		      	<div class="animate-switch" ng-switch-when="Video">Add Video Plugin Here</div>
+		      	<div class="animate-switch" ng-switch-default>
+		      		<canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
+				</div>
+		  	</div>
+		  	<div class="row">
+		    	<div class="form-group">
+	                    <div class="col-sm-8">
+	                      <button type="submit" class="btn btn-default">Save Annotations</button>
+	                    </div>
+	                </div>
+		    	</div>
+    	</div>  
 	</div>
 </section>
